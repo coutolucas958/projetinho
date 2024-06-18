@@ -11,9 +11,9 @@ while True:
     nome = input('Com quem estou falando? ')
     pergunta = input(f'Digite uma pergunta {nome}: ')
     
-    if pergunta.strip() == "" or " ":
-            print('Você não digou uma pergunta.')
-            continue
+    if pergunta.strip() == "" or pergunta.strip() == " ":
+        print('Você não digou uma pergunta.')
+        continue
     
     lista_resposta = [
         "Sim, claro",

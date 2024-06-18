@@ -6,23 +6,29 @@
 """
 import random
 
-pergunta = input('Digite uma pergunta: ')
+while True:
 
-resposta1 = 'Sim, claro'
-resposta2 = 'Não, nem pensar'
-resposta3 = 'Talvez'
-resposta4 = 'Por ser que sim'
+    nome = input('Com quem estou falando? ')
+    pergunta = input(f'Digite uma pergunta {nome}: ')
+    
+    if pergunta.strip() == "" or " ":
+            print('Você não digou uma pergunta.')
+            continue
+    
+    lista_resposta = [
+        "Sim, claro",
+        "Não, nem pensar",
+        "Talvez",
+        "Pode ser que sim"
+    ]
 
-resposta_final = random.randint(1, 4)
-if resposta_final == 1:
-    print(resposta1)
-elif resposta_final == 2:
-    print(resposta2)
-elif resposta_final == 3:
-    print(resposta3)
-else:
-    print(resposta4)
+    resposta_final = random.choice(lista_resposta)
+    print(resposta_final)
+    
+    sair = input('Quer sair? [S]im: ').lower().startswith('S')
 
+    if sair is True:
+        break
 
 """
 
